@@ -1,9 +1,15 @@
 using APIProjectCamp.Context;
+using APIProjectCamp.Entities;
+using APIProjectCamp.ValidationRules;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<ApiContext>();
+
+builder.Services.AddScoped<IValidator<Product>,ProductValidator>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
