@@ -60,5 +60,6 @@ namespace APIProjectCamp.Controllers
 			_context.SaveChanges();
 			return Ok("Güncelleme işlemi başarılı");
 		}
+
 	}
 }
